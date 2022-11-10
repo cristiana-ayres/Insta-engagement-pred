@@ -10,16 +10,6 @@ import math
 # importing followers data base
 data = pd.read_csv("followers_top_final.csv")
 
-# creating table with average comments per post
-average_comments_per_post = data.pivot_table(index=["ranking", "username"], values=["comments_per_post"], aggfunc= {"comments_per_post" : ["sum", "mean", "median", "min", "max"]})
-
-# creating table with average likes per post
-average_likes_per_post = data.pivot_table(index=["ranking", "username"], values=["likes_per_post"], aggfunc= {"likes_per_post" : ["sum", "mean", "median", "min", "max"]})
-average_likes_per_post.columns = average_likes_per_post.columns.droplevel()
-average_likes_per_post.columns = ["max_like", "mean_like", "median_like", "min_like", "sum_like"]
-
-# creating variable engagement
-engagement = (average_likes_per_post.loc[1]["sum_like"] + average_comments_per_post.loc[1]["sum_comment"]) * 100 / (data.loc[1]["followers"] * 1000000)
 
 # creating sum of likes
 sum_of_likes = []
