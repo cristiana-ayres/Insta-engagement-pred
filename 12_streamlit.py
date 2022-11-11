@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn import linear_model
 from sklearn.preprocessing import StandardScaler
+from PIL import Image
 
 data = pd.read_csv("followers_all_final.csv")
 
@@ -26,11 +27,16 @@ logistic = linear_model.LogisticRegression()
 # train the model 
 logistic.fit(scaled_X,y)
 
-st.title('This is our main title')
-st.text('This is any text, describing our app')
+# creating streamlit
+st.set_page_config(page_title='Instagram Influencer Predictor', page_icon=':100:',layout='wide')
+image = Image.open('Photos\Instagram-Icon.png')
+st.image(image, width=80)
+st.title('Will you be the next famous Influencer?')
+st.text("If you want to find out, if you're gonna be the next famous Influencer, insert your Instagram account details below!")
+
 
 # inputs
-input_feature1 = int(st.number_input('How many followers do you have?')) # featureX1
+input_feature1 = int(st.number_input('How many followers do you have?', value=1)) # featureX1
 input_feature2 = int(st.number_input('How many accounts are you following?')) # featureX2
 input_feature3 = int(st.number_input('How many total posts do you have?')) # featureX3
 input_feature4 = int(st.number_input('When was your first post?')) # featureX4
