@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.preprocessing import StandardScaler
 from PIL import Image
+from streamlit_player import st_player
 
 data = pd.read_csv("followers_all_final.csv")
 
@@ -39,7 +40,7 @@ st.text("If you want to find out, if you're gonna be the next famous Influencer,
 input_feature1 = int(st.number_input('How many followers do you have?', value=1)) # featureX1
 input_feature2 = int(st.number_input('How many accounts are you following?')) # featureX2
 input_feature3 = int(st.number_input('How many total posts do you have?')) # featureX3
-input_feature4 = int(st.number_input('When was your first post?')) # featureX4
+input_feature4 = int(st.number_input('How many years ago was your first post?')) # featureX4
 input_feature5 = int(st.number_input('How many likes do you have on your last 3 posts in total?')) # featureX5
 input_feature6 = int(st.number_input('How many comments do you have on your last 3 posts in total?')) # featureX6
 
@@ -74,3 +75,5 @@ if button:
     except:
         st.write('Please input an integer')
 
+url = "https://soundcloud.com/madonna/material-girl"
+st_player(url)
