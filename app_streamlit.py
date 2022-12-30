@@ -30,7 +30,7 @@ logistic.fit(scaled_X,y)
 
 # creating streamlit
 st.set_page_config(page_title='Instagram Influencer Predictor', page_icon=':100:',layout='wide')
-image = Image.open('Photos\Instagram-Icon.png')
+image = Image.open(r'Photos\Instagram-Icon.png')
 st.image(image, width=80)
 st.title('Will you be the next famous Influencer?')
 st.text("If you want to find out, if you're gonna be the next famous Influencer, insert your Instagram account details below!")
@@ -69,9 +69,9 @@ if button:
     try:
         result = logistic.predict(scaled_X_new)
         if result == "Low Engagement":
-            st.write('Your engagement will be low')
+            st.write('Your engagement will be _low_')
         else:
-            st.write('Your engagement will be high')
+            st.write('Your engagement will be _high_')
     except:
         st.write('Please input an integer')
 
