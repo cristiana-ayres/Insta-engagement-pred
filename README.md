@@ -44,7 +44,7 @@ The project's intent is to leverage and improve the skills in Machine Learning.
 
 ## Step 3: Modeling using Logistic Regression
 
-![](https://github.com/cristiana-ayres/Insta-engagement-pred/blob/main/Pictures/logistic_regression.JPG)
+![](https://github.com/cristiana-ayres/Insta-engagement-pred/blob/main/Pictures/logistic_regression.jpg)
 
 ## Step 4: Interpreting Results
 
